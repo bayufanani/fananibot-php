@@ -10,20 +10,20 @@ $text = $update["message"]['text'];
 
 switch (strtolower($text)) {
   case 'hai' || 'hi' || 'halo':
-    $balasan = balas('halo kakak');
+    $balasan = balas($chatID, 'halo kakak');
     break;
   case 'assalamu\'alaikum' || 'assalamualaikum' :
-    $balasan = balas('wa\'alaikumsalam wr. wb.');
+    $balasan = balas($chatID, 'wa\'alaikumsalam wr. wb.');
     break;
   default:
-    $balasan = balas('maaf saya gak paham. hehe 😅');
+    $balasan = balas($chatID, 'maaf saya gak paham. hehe 😅');
     break;
 }
 kirim($balasan);
-
+http_response_code(200);
 
 // fungsi penting
-function balas($text_balasan)
+function balas($chatID, $text_balasan)
 {
   return API_URL."sendmessage?chat_id=".$chatID."&text=".$text_balasan;
 }
