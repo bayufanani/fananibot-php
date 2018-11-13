@@ -9,10 +9,10 @@ $chatID = $update["message"]["chat"]["id"];
 $text = $update["message"]['text'];
 
 switch (strtolower($text)) {
-  case 'hai' || 'hi' || 'halo':
+  case 'hai' :
     $balasan = balas($chatID, 'halo kakak');
     break;
-  case 'assalamu\'alaikum' || 'assalamualaikum' :
+  case 'assalamu\'alaikum' :
     $balasan = balas($chatID, 'wa\'alaikumsalam wr. wb.');
     break;
   default:
